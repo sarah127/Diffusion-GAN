@@ -296,8 +296,9 @@ def training_loop(
 
             # Initialize gradient accumulation.
             if phase.start_event is not None:
-                phase.start_event.record(torch.cuda.current_stream(device))
                 torch.cuda.synchronize()  ## Ensure computations finish
+                phase.start_event.record(torch.cuda.current_stream(device))
+                #torch.cuda.synchronize()  ## Ensure computations finish
 
             phase.opt.zero_grad(set_to_none=True)
             phase.module.requires_grad_(True)
