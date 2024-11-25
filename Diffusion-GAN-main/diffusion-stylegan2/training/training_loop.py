@@ -267,7 +267,7 @@ def training_loop(
         torch.distributed.broadcast(__CUR_NIMG__, 0)
         torch.distributed.broadcast(__CUR_TICK__, 0)
         torch.distributed.broadcast(__BATCH_IDX__, 0)
-        torch.distributed.barrier()  # ensure all processes received this info
+        torch.distributed.barrier()  # #ensure all processes received this info
     cur_nimg = __CUR_NIMG__.item()
     cur_tick = __CUR_TICK__.item()
     tick_start_nimg = cur_nimg
