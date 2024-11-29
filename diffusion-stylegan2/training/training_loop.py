@@ -344,11 +344,8 @@ def training_loop(
         # Perform maintenance tasks once per tick.
         done = (cur_nimg >= total_kimg * 1000)
         if (not done) and (cur_tick != 0) and (cur_nimg < tick_start_nimg + kimg_per_tick * 1000):
-            # Reinitialize CUDA events
-            start_event = torch.cuda.Event(enable_timing=True)
-            end_event = torch.cuda.Event(enable_timing=True)
             continue
-        phase.start_event.record(torch.cuda.current_stream(device))
+        
 
 
         # Print status line, accumulating the same information in stats_collector.
