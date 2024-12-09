@@ -160,8 +160,8 @@ def training_loop(
     if rank == 0:
         print('Constructing networks...')
     common_kwargs = dict(c_dim=training_set.label_dim, img_resolution=training_set.resolution, img_channels=training_set.num_channels)
-    G = dnnlib.util.construct_class_by_name(**G_kwargs, **common_kwargs).train().requires_grad_(False).to(device) # subclass of torch.nn.Module
-    D = dnnlib.util.construct_class_by_name(**D_kwargs, **common_kwargs).train().requires_grad_(False).to(device) # subclass of torch.nn.Module
+    G = dnnlib.util.construct_class_by_name(**G_kwargs, **common_kwargs).train().requires_grad_(False).to(device) if G_kwargs is not None else None# subclass of torch.nn.Module
+    D = dnnlib.util.construct_class_by_name(**D_kwargs, **common_kwargs).train().requires_grad_(False).to(device) if D_kwargs is not None else None# subclass of torch.nn.Module
     G_ema = copy.deepcopy(G).eval()
 
     # Check for existing checkpoint
@@ -200,6 +200,8 @@ def training_loop(
     ada_stats = training_stats.Collector(regex='Loss/signs/real')
 
     # Distribute across GPUs.
+    D.requires_grad_(True)
+    G.requires_grad_(True)
     if rank == 0:
         print(f'Distributing across {num_gpus} GPUs...')
     for module in [G, D, G_ema]:
