@@ -41,7 +41,7 @@ pg_modules_path   = os.path.abspath(os.path.join(os.path.dirname(__file__), '../
 sys.path.append(pg_modules_path)
 
 # Import Python files from pg_modules
-import 
+import *
 #----------------------------------------------------------------------------
 
 class UserError(Exception):
