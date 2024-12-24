@@ -15,8 +15,9 @@ import torch
 import dnnlib
 from torch_utils import misc
 #cd Diffusion-GAN/diffusion-projected-gan 
-from ...diffusion_projected_gan import pg_modules
-
+#from ...diffusion_projected_gan import pg_modules
+#C:\Users\sarah\Diffusion-GAN\Diffusion-GAN\diffusion-projected-gan
+#from ...diffusion-projected-gan diffusion-projected-gan 
 #----------------------------------------------------------------------------
 
 def load_network_pkl(f, force_fp16=False):

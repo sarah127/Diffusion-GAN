@@ -23,6 +23,18 @@ from metrics import metric_main
 from torch_utils import training_stats
 from torch_utils import custom_ops
 
+# diffusion-stylegan2/train.py
+import sys
+import os
+
+# Add the root directory to sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+# Import using absolute imports
+from diffusion_projected_gan import pg_modules
+#module1.some_function()
+
+
 #----------------------------------------------------------------------------
 
 class UserError(Exception):
