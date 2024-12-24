@@ -14,13 +14,15 @@ import numpy as np
 import torch
 import dnnlib
 from torch_utils import misc
-from diffusion-projected-gan import pg_modules
+%cd /kaggle/working/Diffusion-GAN/diffusion-projected-gan 
+#from diffusion-projected-gan 
+import pg_modules
 
 #----------------------------------------------------------------------------
 
 def load_network_pkl(f, force_fp16=False):
     data = _LegacyUnpickler(f).load()
-
+     
     # Legacy TensorFlow pickle => convert.
     if isinstance(data, tuple) and len(data) == 3 and all(isinstance(net, _TFNetworkStub) for net in data):
         tf_G, tf_D, tf_Gs = data
