@@ -29,14 +29,15 @@ import os
 import sys
 
 # Define the path to the "pg_modules" module
-module_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../diffusion-projected-gan/pg_modules.py'))
+module_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../diffusion-projected-gan'))
 
 # Load the module dynamically
-spec = importlib.util.spec_from_file_location("pg_modules", module_path)
-pg_modules = importlib.util.module_from_spec(spec)
-sys.modules["pg_modules"] = pg_modules
-spec.loader.exec_module(pg_modules)
+#spec = importlib.util.spec_from_file_location("pg_modules", module_path)
+#pg_modules = importlib.util.module_from_spec(spec)
+#sys.modules["pg_modules"] = pg_modules
+#spec.loader.exec_module(pg_modules)
 #module1.some_function()
+from pg_modules import *
 
 
 #----------------------------------------------------------------------------
