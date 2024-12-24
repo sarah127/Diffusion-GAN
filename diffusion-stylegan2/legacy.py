@@ -14,7 +14,7 @@ import numpy as np
 import torch
 import dnnlib
 from torch_utils import misc
-from diffusion_projected_gan import pg_modules
+from diffusion-projected-gan import pg_modules
 
 #----------------------------------------------------------------------------
 
