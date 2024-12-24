@@ -37,8 +37,8 @@ module_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../diffus
 #sys.modules["pg_modules"] = pg_modules
 #spec.loader.exec_module(pg_modules)
 #module1.some_function()
-from pg_modules import *
-
+#from pg_modules import *
+import pg_modules
 
 #----------------------------------------------------------------------------
 
