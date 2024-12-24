@@ -14,9 +14,8 @@ import numpy as np
 import torch
 import dnnlib
 from torch_utils import misc
-%cd /kaggle/working/Diffusion-GAN/diffusion-projected-gan 
-#from diffusion-projected-gan 
-import pg_modules
+#cd Diffusion-GAN/diffusion-projected-gan 
+from diffusion_projected_gan import pg_modules
 
 #----------------------------------------------------------------------------
 
