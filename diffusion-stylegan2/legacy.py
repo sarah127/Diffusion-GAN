@@ -15,7 +15,7 @@ import torch
 import dnnlib
 from torch_utils import misc
 #cd Diffusion-GAN/diffusion-projected-gan 
-from diffusion_projected_gan import pg_modules
+from ...diffusion_projected_gan import pg_modules
 
 #----------------------------------------------------------------------------
 
