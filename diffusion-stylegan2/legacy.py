@@ -14,7 +14,8 @@ import numpy as np
 import torch
 import dnnlib
 from torch_utils import misc
-from Diffusion-GAN.diffusion-projected-gan import pg_modules
+from diffusion_projected_gan import pg_modules
+
 #----------------------------------------------------------------------------
 
 def load_network_pkl(f, force_fp16=False):
