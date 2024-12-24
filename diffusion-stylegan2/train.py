@@ -29,7 +29,7 @@ import os
 import sys
 
 # Define the path to the "pg_modules" module
-module_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../diffusion-projected-gan'))
+pg_modules_path   = os.path.abspath(os.path.join(os.path.dirname(__file__), '../diffusion-projected-gan/pg_modules'))
 
 # Load the module dynamically
 #spec = importlib.util.spec_from_file_location("pg_modules", module_path)
@@ -38,8 +38,10 @@ module_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../diffus
 #spec.loader.exec_module(pg_modules)
 #module1.some_function()
 #from pg_modules import *
-import pg_modules
+sys.path.append(pg_modules_path)
 
+# Import Python files from pg_modules
+import 
 #----------------------------------------------------------------------------
 
 class UserError(Exception):
