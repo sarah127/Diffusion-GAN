@@ -17,7 +17,27 @@ from torch_utils import misc
 #cd Diffusion-GAN/diffusion-projected-gan 
 #from ...diffusion_projected_gan import pg_modules
 #C:\Users\sarah\Diffusion-GAN\Diffusion-GAN\diffusion-projected-gan
-#from ...diffusion-projected-gan diffusion-projected-gan 
+#from ...diffusion-projected-gan diffusion-projected-gan
+# diffusion-stylegan2/train.py
+import importlib.util
+import os
+import sys
+
+# Define the path to the "pg_modules" module
+pg_modules_path   = os.path.abspath(os.path.join(os.path.dirname(__file__), '../diffusion-projected-gan/pg_modules'))
+
+# Load the module dynamically
+#spec = importlib.util.spec_from_file_location("pg_modules", module_path)
+#pg_modules = importlib.util.module_from_spec(spec)
+#sys.modules["pg_modules"] = pg_modules
+#spec.loader.exec_module(pg_modules)
+#module1.some_function()
+#from pg_modules import *
+sys.path.append(pg_modules_path)
+
+# Import Python files from pg_modules
+import diffusion #networks_fastgan.py ,networks_stylegan2.py,projector.py
+ 
 #----------------------------------------------------------------------------
 
 def load_network_pkl(f, force_fp16=False):
